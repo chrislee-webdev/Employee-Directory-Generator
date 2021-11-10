@@ -41,6 +41,17 @@ body {
 }
 
 .card {
-    width: 30%;
+    width: 25%;
     align-items: center;
+    justify-content: space-around;
+    border: black solid .5px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
 }

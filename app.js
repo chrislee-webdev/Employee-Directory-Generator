@@ -1,5 +1,5 @@
 let employees = [];
-const urlAPI = 'https://fsjs-public-api-backup.herokuapp.com/api'
+const urlAPI = 'https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone,dob &noinfo &nat=US'
 const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
@@ -12,10 +12,10 @@ fetch(urlAPI)
     .catch(err => console.log(err));
 
 function displayEmployees(employeeData) {
+    employees = employeeData;
+    let employeeHTML = '';
 
-let employeeHTML = '';
-
-employeeHTML.forEach((employee, index) => {
+employees.forEach((employee, index) => {
     let name = employee.name;
     let email = employee.email;
     let city = employee.location.city;
@@ -23,7 +23,7 @@ employeeHTML.forEach((employee, index) => {
 
     employeeHTML += `
     <div class="card" data-index="${index}">
-        <img class="avatar" src="${picture-large}>
+        <img class="avatar" src="${picture.large}">
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
             <p class="email">${email}</p>
