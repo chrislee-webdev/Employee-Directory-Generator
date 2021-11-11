@@ -23,7 +23,7 @@ employees.forEach((employee, index) => {
 
     employeeHTML += `
     <div class="card" data-index="${index}">
-        <img class="avatar" src="${picture.large}">
+        <img class="avatar" src="${picture.large}"/>
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
             <p class="email">${email}</p>
@@ -46,7 +46,7 @@ function displayModal(index) {
     <div class="text-container">
         <h2 class="name">${name.first} ${name.last}</h2>
         <p class="email">${email}</p>
-        <p class="address">${address}</p>
+        <p class="address">${city}</p>
         <hr />
         <p>${phone}</p>
         <p class="address">${street}, ${state} ${postcode}</p>
@@ -59,7 +59,7 @@ function displayModal(index) {
     modalContainer.innerHTML = modalHTML;
 }
 
-gridContainer.addEventListener("click", e => {
+gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
         const card = e.target.closest(".card");
         const index = card.getAttribute("data-index");
@@ -68,6 +68,6 @@ gridContainer.addEventListener("click", e => {
     }
 });
 
-modalClose.addEventListener("click", () => {
+modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
-})
+});
